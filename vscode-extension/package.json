@@ -1,0 +1,87 @@
+{
+  "name": "apexpath-database-ai",
+  "displayName": "ApexPath Database AI Assistant",
+  "description": "Professional AI-powered SQL query generator for PostgreSQL databases. Transform natural language into optimized SQL queries instantly.",
+  "version": "1.0.0",
+  "publisher": "ApexPath",
+  "author": {
+    "name": "ApexPath Technologies",
+    "email": "support@apexpath.com"
+  },
+  "homepage": "https://apexpath.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apexpath/database-ai-assistant"
+  },
+  "bugs": {
+    "url": "https://github.com/apexpath/database-ai-assistant/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other", "Machine Learning", "Data Science"],
+  "keywords": ["sql", "database", "ai", "postgresql", "query", "natural language", "apexpath"],
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "activationEvents": [],
+  "main": "./out/simple-extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "databaseAI.openPanel",
+        "title": "Open Database AI Assistant",
+        "category": "Database AI",
+        "icon": "$(database)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "databaseAI",
+          "title": "Database AI Assistant",
+          "icon": "$(database)"
+        }
+      ]
+    },
+    "views": {
+      "databaseAI": [
+        {
+          "id": "databaseAI.view",
+          "name": "Database AI Assistant",
+          "when": "true"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "databaseAI.openPanel",
+          "when": "view == databaseAI",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {},
+  "extensionDependencies": [],
+  "badges": [
+    {
+      "url": "https://img.shields.io/badge/ApexPath-Professional-blue",
+      "href": "https://apexpath.com",
+      "description": "ApexPath Professional Product"
+    }
+  ]
+}
